@@ -8,8 +8,13 @@
   --border-radius: 10px;
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: var(--background-color);
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -41,6 +46,10 @@ header{
 
 h1, h2, h3, h4{
   color: white;
+}
+
+section {
+  scroll-margin-top: 40px; /* Ajusta este valor según la altura de tu header */
 }
 
 header:hover::after{
@@ -103,5 +112,11 @@ footer span a img{
 
 .wdiHeader{
   background: linear-gradient(to top right, #002f54, #25c3f3);
+  color: white !important;
+  margin-left: 10px;
+}
+
+.tryHeader{
+  background: linear-gradient(to top right, #3c0054, var(--main-color));
   color: white !important;
 }

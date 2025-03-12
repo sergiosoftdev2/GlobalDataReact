@@ -20,9 +20,11 @@ export default function RootLayout({ children }) {
           </div>
           
           <nav className="headerNav">
-            <Link href="">Home</Link>
-            <Link href="">How does it work?</Link>
+            <Link href="/">Home</Link>
+            <Link href="/#how">How does it work?</Link>
+            <hr/>
             <Link href="" className="wdiHeader">World Development Indicators</Link>
+            <Link href="" className="tryHeader">Try now!</Link>
           </nav>
         </header>
         {children}
