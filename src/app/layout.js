@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
 
@@ -12,12 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          type="module"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-        ></script>
-      </head>
       <body className={`${inter.className}`}>
         <header>
           <div className="headerLogo">
@@ -38,6 +33,12 @@ export default function RootLayout({ children }) {
             <Link href="https://www.linkedin.com/in/sergiosoftdev/" target="blank"><img src="https://e7.pngegg.com/pngimages/753/965/png-clipart-linkedin-linkedin.png"/></Link>
           </span>
         </footer>
+
+
+        <Script
+          type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></Script>
       </body>
     </html>
   );

@@ -56,8 +56,8 @@ export default function Home() {
                 <div className={styles.dataContainer}></div>
               </div>
             </div>
-            <h3>3. Everything's done!</h3>
-            <p>You can share or use your data anywhere you want. No restrictions at all of it's use, enjoy it!</p>
+            <h3>3. Everything&apos;s done!</h3>
+            <p>You can share or use your data anywhere you want. No restrictions at all of it&apos;s use, enjoy it!</p>
           </div>
         </div>
       </section>
