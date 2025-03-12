@@ -1,0 +1,107 @@
+:root{
+  --background-color: #010101;
+  --text-color: #cacaca;
+  --border-color: #333333;
+  --main-color: #5f43b2;
+  --sec-color: #3a3053;
+  --main-width: 1400px;
+  --border-radius: 10px;
+}
+
+body{
+  background-color: var(--background-color);
+  margin: 0;
+}
+
+p{
+  color: var(--text-color);
+}
+
+main{
+  width: var(--main-width);
+  min-height: 100dvh;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+}
+
+header{
+  position: fixed;
+  z-index: 20;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #010101d3;
+  width: 100%;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+}
+
+h1, h2, h3, h4{
+  color: white;
+}
+
+header:hover::after{
+  background-color: var(--main-color);
+}
+
+header .headerLogo h2{
+  color: var(--text-color);
+  font-weight: 800;
+  padding: 10px;
+  margin: 0;
+}
+
+header .headerNav{
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+  height: 100%;
+}
+
+header .headerNav a{
+  color: var(--text-color);
+  padding: 10px;
+  text-decoration: none;
+  height: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  transition: .2s;
+}
+
+header .headerNav a:hover{
+  color: white;
+  border: 1px solid white;
+}
+
+footer{
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer a{
+  color: white;
+  font-weight: bold;
+}
+
+footer span{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+footer span a img{
+  width: 20px;
+  border-radius: 5px;
+}
+
+.wdiHeader{
+  background: linear-gradient(to top right, #002f54, #25c3f3);
+  color: white !important;
+}

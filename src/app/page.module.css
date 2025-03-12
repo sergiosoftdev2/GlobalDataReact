@@ -1,0 +1,289 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+
+.half{
+  width: 50%;
+}
+
+.heroSection{
+  color: var(--text-color);
+  padding: 50px;
+  padding-top: 125px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.heroSection .heroInfo h1{
+  font-size: 5rem;
+  position: relative;
+  font-weight: 800;
+  margin: 0;
+  background: -webkit-linear-gradient(#ffffff, #afafaf);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSection .heroInfo .botones{
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.heroSection .heroInfo .botones a{
+  position: relative;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(to right, var(--background-color), rgb(24, 24, 24));
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  transition: .2s;
+}
+
+.heroSection .heroInfo .botones a:hover{
+  padding-inline: 25px;
+  border-color: rgb(224, 224, 224);
+}
+
+.heroSection .heroInfo .botones a::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background: -webkit-linear-gradient(60deg, #8b32ff, var(--sec-color));
+  filter: blur(5px);
+}
+
+.heroSection .heroInfo .botones .botonProbar{
+  background: linear-gradient(to top right, var(--main-color), #31045c) !important;
+}
+
+.heroSection .heroInfo .botones .botonProbar::after{
+  display: none;
+}
+
+.heroSection .heroImage{
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  border-radius: var(--border-radius);
+}
+
+.heroSection .heroImage::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.heroSection .heroImage .earthContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 25%;
+  scale: 1.7;
+  animation: fadeIn 10s;
+}
+
+.sectionGradient{
+  background: -webkit-linear-gradient(#8b32ff00, #5323ce17);
+  padding-bottom: 20px;
+  padding-inline: 20px;
+}
+
+.sectionTitle{
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #bdbdbd);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  margin-block: 20px;
+}
+
+.gridSection{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-block: 40px;
+}
+
+.gridSection .gridChild{
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  max-height: 350px;
+  transition: 0.2s;
+}
+
+.gridSection .gridChild::before{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  border-radius: var(--border-radius);
+  background: -webkit-linear-gradient(#eeeeee02, #bdbdbd0a);
+  transition: .2s;
+}
+
+.gridSection .gridChild:hover::before{
+  background: -webkit-linear-gradient(#eeeeee02, #bdbdbd34);
+}
+
+.gridSection .gridChild:hover{
+  border-color: white;
+}
+
+.gridSection .gridChild h3{
+  margin-block: 0;
+  font-size: 1.5rem;
+}
+
+.gridSection .gridChild p{
+  margin-block: 5px;
+}
+
+.gridSection .imageChildGrid{
+  width: 100%;
+  height: 60%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gridSection .imageChildGrid img{
+  height: 100%;
+}
+
+.childDone{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  margin-top: 10px;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.childDone .searchContainer{
+  width: 100%;
+  background: -webkit-linear-gradient(#eeeeee02, #bdbdbd1a);
+  height: 40px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.childDone .dataContainer{
+  width: 100%;
+  background: -webkit-linear-gradient(#eeeeee02, #bdbdbd1a);
+  height: 150px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.wdiSection{
+  text-align: center;
+  text-wrap: pretty;
+  border-inline: 1px solid var(--border-color);
+  margin-top: 100px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+.wdiSection p{
+  position: relative;
+  text-wrap: pretty;
+  width: 60%;
+  line-height: 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+  border-radius: var(--border-radius);
+  
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+
+.wdiSection p::after{
+  content: "";
+  position: absolute;
+  border-radius: var(--border-radius);
+  top: 0;
+  z-index: -1;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: .2s;
+  background: -webkit-linear-gradient(#eeeeee02, #bdbdbd0e);
+}
+
+.wdiSection p:hover{
+  border-color: rgb(165, 165, 165);
+}
+
+.wdiSection p:hover::after{
+  opacity: 1;
+}
+
+.wdiSection p span{
+  padding: 5px;
+  font-weight: bold;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background: linear-gradient(to top right, #002f54, #25c3f3);
+  transition: .2s;
+}
+
+.wdiSection img{
+  margin-block: 50px;  
+  width: 40%;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  
+}
+
+.wdiSection .wdiFlex{
+  display: flex;
+  gap: 20px;
+  padding:20px;
+  padding-top: 0;
+  align-items: center;
+}
