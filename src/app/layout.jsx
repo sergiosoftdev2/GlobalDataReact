@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
             <Link href="/">Home</Link>
             <Link href="/#how">How does it work?</Link>
             <hr/>
-            <Link href="" className="wdiHeader">World Development Indicators</Link>
-            <Link href="" className="tryHeader">Try now!</Link>
+            <Link href="https://databank.worldbank.org/source/world-development-indicators" target="blank" className="wdiHeader">World Development Indicators</Link>
+            <Link href="/countries" className="tryHeader">Try now!</Link>
           </nav>
         </header>
         {children}

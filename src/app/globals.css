@@ -12,6 +12,27 @@
   scroll-behavior: smooth;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body{
   background-color: var(--background-color);
   overflow-x: hidden;
@@ -34,7 +55,7 @@ header{
   position: fixed;
   z-index: 20;
   border-bottom: 1px solid var(--border-color);
-  background-color: #010101d3;
+  background-color: #010101a6;
   width: 100%;
   padding: 10px;
   backdrop-filter: blur(10px);

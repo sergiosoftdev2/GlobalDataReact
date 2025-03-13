@@ -1,0 +1,75 @@
+.absoluteObject1 {
+    position: absolute;
+    top: 200px;
+    right: -400px;
+    width: 600px;
+    height: 600px;
+    opacity: 0.2;
+    filter: blur(100px);
+    z-index: -1;
+    background-color: #dd87ff;
+}
+
+.absoluteObject2 {
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    opacity: 0.2;
+    filter: blur(100px);
+    z-index: -1;
+    background-color: var(--main-color)
+}
+
+.countriesSection {
+    color: var(--text-color);
+    padding-top: 80px;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.searchContainer input{
+    padding: 15px;
+    width: 40%;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+.countriesContainer{
+    height: 70dvh;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    padding-block: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    box-sizing: border-box;
+    backdrop-filter: blur(50px);
+    position: relative;
+    overflow-y: auto;
+}
+
+.countriesContainer h2{
+    margin-inline: 20px;
+    margin-block: 0;
+    padding: 15px;
+    width: calc(100% - 40px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.countriesContainer h2:hover{
+    background-color: rgb(20, 20, 20);
+    cursor: pointer;
+}

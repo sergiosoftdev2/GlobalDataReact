@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Link from "next/link";
-
+import { MainPageCard } from "@/components/MainPageCard/mainPageCard";
 
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
             <h1>Global Data</h1>
             <p>Be ready to explore all world data in just a flew clicks. With Global Data you will be able to visualize the most important statistics of any country in the world.</p>
             <div className={styles.botones}>
-              <Link href="" className={styles.botonProbar}>Try now!</Link>
-              <Link href="">How does it work?</Link>
+              <Link href="/countries" className={styles.botonProbar}>Try now!</Link>
+              <Link href="#how">How does it work?</Link>
             </div>
           </div>
           <div className={`${styles.heroImage} ${styles.half}`}>
@@ -38,30 +38,20 @@ export default function Home() {
             Also, it provides all the information in text so you can copy it and download it in your own system.
           </p>
           <div className={styles.gridSection}>
-          <div className={styles.gridChild}>
-              <div className={styles.imageChildGrid}>
-                <img src="https://www.freeiconspng.com/uploads/world-map-image-23.png"/>
-              </div>
-              <h3>1. Select a country of your choice</h3>
-              <p>Just click in any country you want to continue on the next step selecting the series of data you want the app to bring you.</p>
-            </div>
-            <div className={styles.gridChild}>
-              <div className={styles.imageChildGrid}>
-                <img src="https://img.icons8.com/?size=100&id=pIIycGakyM76&format=png&color=FFFFFF"/>
-              </div>
-              <h3>2. Try any series of statistics</h3>
-              <p>Many series of data will be displayed to you; select any of them or try different ones to bring up the data of your choice on your hands</p>
-            </div>
-            <div className={styles.gridChild}>
-              <div className={styles.imageChildGrid}>
-                <div className={styles.childDone}>
-                  <div className={styles.searchContainer}></div>
-                  <div className={styles.dataContainer}></div>
-                </div>
-              </div>
-              <h3>3. Everything&apos;s done!</h3>
-              <p>You can share or use your data anywhere you want. No restrictions at all of it&apos;s use, enjoy it!</p>
-            </div>
+            <MainPageCard 
+              imgSrc="https://www.freeiconspng.com/uploads/world-map-image-23.png" 
+              titleText="1. Select a country of your choice" 
+              text="Just click in any country you want to continue on the next step selecting the series of data you want the app to bring you." 
+            />
+            <MainPageCard
+              imgSrc="https://img.icons8.com/?size=100&id=pIIycGakyM76&format=png&color=FFFFFF"
+              titleText="2. Try any series of statistics"
+              text="Many series of data will be displayed to you; select any of them or try different ones to bring up the data of your choice on your hands"
+            />
+            <MainPageCard
+              titleText="3. Everything&apos;s done!"
+              text="You can share or use your data anywhere you want. No restrictions at all of it&apos;s use, enjoy it!"
+            />
           </div>
         </section>
         <section className={styles.wdiSection}>
