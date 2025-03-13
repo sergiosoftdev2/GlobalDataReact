@@ -34,7 +34,6 @@ export default function Home() {
             let sname = await getSeriesMetaData(seriesCode).then(data => {
                 return data.seriesData[0]
             });
-            console.log(sname);
             setSeriesMetaData(sname);
         };
 
@@ -48,8 +47,9 @@ export default function Home() {
         fetchSeriesMetaData();
         fetchCountryName();
         fetchSeriesData();
-    }, []);
+    }, [params]);
 
+    // CHART
     useEffect(() => {
         if (data.length > 0) {
           // Destroy the previous chart if it exists
@@ -101,11 +101,21 @@ export default function Home() {
             chartRef.current.chart.destroy();
           }
         };
-      }, [data, seriesMetaData]);
+    }, [data]);
 
-    useEffect(() => {
-        console.log(countryName);
-    }, [countryName]);
+    const handleCopy = () => {
+        navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+    };
+
+    const handleDownload = () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", `${seriesMetaData.series_topic}.json`);
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    };
 
     return(
         <>
@@ -127,14 +137,38 @@ export default function Home() {
                     <canvas ref={chartRef} id="acquisitions"></canvas>
                 </div>
                 <section className={styles.dataContainer}>
-                    <h1>Raw Data: </h1>
-                    <div className={styles.dataGridContainer}>
-                        {data.map((row, index) => (
-                            <div key={index} className={styles.rowCard}>
-                                <h3>{row.year}</h3>
-                                <p>{row.value}</p>
-                            </div>
-                        ))}
+                    
+                    <div className={styles.flexContainer}>
+                      <div className={styles.flexChildRawData}>
+                        <h1>Data: </h1>
+                        <div className={styles.dataGridContainer}>
+                            {data.map((row, index) => (
+                                <div key={index} className={styles.rowCard}>
+                                    <h3>{row.year}</h3>
+                                    <p>{row.value}</p>
+                                </div>
+                            ))}
+                        </div>
+                      </div>
+                      <div className={styles.flexChildTextArea}>
+                        <h1>JSON: </h1>
+                        <div className={styles.textAreaContainer}>
+                          <textarea 
+                            readOnly 
+                            value={data.length > 0 ? JSON.stringify(data, null, 2) : "No data available"} 
+                          />
+                          <div className={styles.buttonContainer}>
+                            <button onClick={handleCopy}>
+                              Copy
+                              <img src="/copy.svg" alt="copy" />
+                            </button>
+                            <button onClick={handleDownload}>
+                              Download
+                              <img src="/download.svg" alt="download" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </section>
             </main>
