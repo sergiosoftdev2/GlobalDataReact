@@ -4,6 +4,7 @@ import { MainPageCard } from "@/components/MainPageCard/mainPageCard";
 
 
 export default function Home() {
+  
   return (
     <>
       <div className={styles.absoluteObject1}></div>

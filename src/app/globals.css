@@ -34,6 +34,7 @@
 }
 
 body{
+  position: relative;
   background-color: var(--background-color);
   overflow-x: hidden;
   margin: 0;
@@ -77,8 +78,9 @@ header:hover::after{
   background-color: var(--main-color);
 }
 
-header .headerLogo h2{
-  color: var(--text-color);
+header .headerLogo a{
+  text-decoration: none;
+  color: white;
   font-weight: 800;
   padding: 10px;
   margin: 0;

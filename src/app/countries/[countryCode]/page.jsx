@@ -1,66 +1,64 @@
 "use client"
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import styles from "./countries.module.css";
-import { getCountries, getCountryCode } from "@/components/db/countries";
+import styles from "./countryCode.module.css";
 import { getCountrySeries } from "@/components/db/series";
+import { useParams, useRouter } from "next/navigation";
 
-export default function Home() {
+export default function Home({params}) {
 
     const router = useRouter();
-
+    const { countryCode } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [countries, setCountries] = useState([]);
-    const [filteredCountries, setFilteredCountries] = useState([]);
+    const [series, setSeries] = useState([]);
+    const [filteredSeries, setFilteredSeries] = useState([]);
     
     useEffect(() => {
 
-        async function fetchCountries() {
-            const response = await getCountries();
+        async function fetchSeries() {
+            const response = await getCountrySeries(countryCode);
             if (response.success) {
-                setCountries(response.countries);
-                setFilteredCountries(response.countries);
+                setSeries(response.series);
+                setFilteredSeries(response.series);
                 setIsLoading(false);
             } else {
-                console.error("Error fetching countries:", response.error);
+                console.error("Error fetching series:", response.error);
             }
         }
         
-        fetchCountries();
+        fetchSeries();
     }, []);
 
     useEffect(() => {
         if (!isLoading) {
-            let countries = document.querySelectorAll(".countrySelect");
+            
+            let seriesDiv = document.querySelectorAll(".countrySelect");
     
             const handleClick = async (event) => {
-                let countryName = event.currentTarget.dataset.value
-                let countryCodeFetch = await getCountryCode(countryName);
-                let countrycode = countryCodeFetch.countryCode[0].country_Code
-                router.push(`/countries/${countrycode}`);
+                let seriesCode = event.currentTarget.dataset.value
+                router.push(`/countries/${countryCode}/${seriesCode}`);
             };
     
-            countries.forEach(country => {
-                country.addEventListener("click", handleClick);
+            seriesDiv.forEach(serie => {
+                serie.addEventListener("click", handleClick);
             });
     
             return () => {
-                countries.forEach(country => {
-                    country.removeEventListener("click", handleClick);
+                seriesDiv.forEach(serie => {
+                    serie.removeEventListener("click", handleClick);
                 });
             };
         }
-    }, [filteredCountries]);
+    }, [filteredSeries]);
 
     const handleSearch = (e) => {
         const searchValue = e.target.value.toLowerCase();
         if (searchValue === "") {
-            setFilteredCountries(countries);
+            setFilteredSeries(series);
         } else {
-            const filtered = countries.filter(country => 
-                country.short_name.toLowerCase().startsWith(searchValue)
+            const filtered = series.filter(serie => 
+                serie.topic.toLowerCase().includes(searchValue)
             );
-            setFilteredCountries(filtered);
+            setFilteredSeries(filtered);
         }
     };
 
@@ -71,11 +69,11 @@ export default function Home() {
         
             <main className={styles.countriesSection}>
                 <div className={styles.searchContainer}>
-                    <h1>Choose a country: </h1>
+                    <h1>Choose a series of data: </h1>
                     <input 
                         type="text"
                         autoComplete="off" 
-                        placeholder="Search a country..." 
+                        placeholder="Search a series here..." 
                         id="search"
                         onChange={handleSearch}
                     />
@@ -92,14 +90,14 @@ export default function Home() {
                                 <div className={styles.ghostResult}></div>
                                 <div className={styles.ghostResult}></div>
                             </>
-                        ) : filteredCountries.length > 0 ? (
-                                filteredCountries.map((country, index) => (
-                                    <div key={index} className="countrySelect" data-value={country.short_name}>
-                                        <h2>{country.short_name}</h2>
+                        ) : filteredSeries.length > 0 ? (
+                            filteredSeries.map((serie, index) => (
+                                    <div key={index} className="countrySelect" data-value={serie.series_code}>
+                                        <h2>{serie.topic}</h2>
                                     </div>
                                 ))
                         ) : (
-                                <p>No countries named like this...</p>
+                                <p>No series like that one...</p>
                         )
                     }
                 </div>

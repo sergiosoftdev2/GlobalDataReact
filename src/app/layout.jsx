@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className}`}>
         <header>
           <div className="headerLogo">
-            <h2>Global Data | WDI</h2>
+            <Link href="/">Global Data | WDI</Link>
           </div>
           
           <nav className="headerNav">

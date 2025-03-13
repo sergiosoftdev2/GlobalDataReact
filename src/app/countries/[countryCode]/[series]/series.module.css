@@ -1,0 +1,112 @@
+@keyframes ghostAnimation {
+    0%{
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    } 75% {
+        opacity: 0.5;
+    } 90% {
+        opacity: 0.75;
+    } 100% {
+        opacity: 0;
+    }
+}
+
+.absoluteObject1 {
+    position: absolute;
+    top: 200px;
+    right: -400px;
+    width: 600px;
+    height: 600px;
+    opacity: 0.2;
+    filter: blur(100px);
+    z-index: -1;
+    background-color: #dd87ff;
+}
+
+.absoluteObject2 {
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    opacity: 0.2;
+    filter: blur(100px);
+    z-index: -1;
+    background-color: var(--main-color)
+}
+
+.searchContainer h1{
+    margin-bottom: 0;
+}
+
+.countriesSection {
+    margin: 0 auto;
+    color: var(--text-color);
+    padding-top: 80px;
+}
+
+.ghostTitle{
+    width: 100%;
+    margin-block: 20px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    background-color: var(--border-color);
+    animation: ghostAnimation 3s infinite;
+}
+
+.chartContainer{
+    width: 100%;
+    min-height: 700px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dataContainer{
+    margin-top: 50px;
+}
+
+.dataContainer h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.dataGridContainer{
+    max-height: 500px;
+    overflow: hidden;
+    width: 30%;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.rowCard{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.rowCard h3{
+    width: 50%;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to top right, #3c0054, var(--main-color));
+}
+
+.rowCard p{
+    margin: 0;
+    width: 50%;
+    text-align: center;
+}
