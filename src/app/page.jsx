@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import { MainPageCard } from "@/components/MainPageCard/mainPageCard";
+import { MainPageCardText } from "@/components/MainPageCardText/mainPageCardText";
 
 
 export default function Home() {
@@ -63,6 +64,35 @@ export default function Home() {
               It provides statistical insights into economic, social, and environmental aspects of development across countries and regions.
             </p>
             <img src="https://landportal.org/sites/default/files/2024-03/WorldBank_Logo_optimized-17.png" />
+          </div>
+        </section>
+        <section className={styles.sectionGradient}>
+          <h2 className={styles.sectionTitle}>What can you do with Global Data?</h2>
+          <div className={styles.gridSection}>
+            <MainPageCardText 
+              titleText="Visualize the World Data" 
+              text="With Global Data you can visualize the data of any country in the world in a simple and easy way." 
+            />
+            <MainPageCardText 
+              titleText="Save the data you want" 
+              text="You can just copy the data you want and paste it in your own system or use it as you want." 
+            />
+            <MainPageCardText 
+              titleText="Use it whenever you want, no restrictions" 
+              text="Enjoy your fresh data and use it as you want, no restrictions at all." 
+            />
+            <MainPageCardText 
+              titleText="Share your data to the world" 
+              text="Share your data to the world and let them know about it." 
+            />
+            <MainPageCardText 
+              titleText="Save the data in a JSON file" 
+              text="Save the data in a JSON file and use it as you want. Just download it in the last step of the app." 
+            />
+            <MainPageCardText 
+              titleText="Use it whenever you want, no restrictions" 
+              text="Enjoy your fresh data and use it as you want, no restrictions at all." 
+            />
           </div>
         </section>
       </main>

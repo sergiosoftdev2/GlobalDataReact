@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         </header>
         {children}
         <footer>
-          Developed and Designed by Sergio García López |
+          👨🏻‍💻 Developed and Designed by Sergio García López |
           <span>
             <Link href="https://github.com/sergiosoftdev2" target="blank"><img src="https://img.icons8.com/ios11/512/FFFFFF/github.png"/></Link>
             <Link href="https://www.linkedin.com/in/sergiosoftdev/" target="blank"><img src="https://e7.pngegg.com/pngimages/753/965/png-clipart-linkedin-linkedin.png"/></Link>

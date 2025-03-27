@@ -1,0 +1,125 @@
+.gridChild {
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    max-height: 350px;
+    transition: 0.2s;
+}
+
+.gridChild::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: var(--border-radius);
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd0a);
+    transition: 0.2s;
+}
+
+.gridChild:hover::before {
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd34);
+}
+
+.gridChild:hover {
+    border-color: white;
+}
+
+.gridChild h3 {
+    margin-block: 0;
+    font-size: 1.5rem;
+}
+
+.gridSection .gridChild p {
+    margin-block: 5px;
+}
+
+.gridChild .imageChildGrid {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gridChild .imageChildGrid img {
+    width: 100%;
+}
+
+.gridSection .gridChild {
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    max-height: 350px;
+    transition: 0.2s;
+}
+
+.gridSection .gridChild::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: var(--border-radius);
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd0a);
+    transition: 0.2s;
+}
+
+.gridSection .gridChild:hover::before {
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd34);
+}
+
+.gridSection .gridChild:hover {
+    border-color: white;
+}
+
+.gridSection .gridChild h3 {
+    margin-block: 0;
+    font-size: 1.5rem;
+}
+
+.gridSection .gridChild p {
+    margin-block: 5px;
+}
+
+.childDone {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    height: 60%;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.childDone .searchContainer {
+    width: 100%;
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd1a);
+    height: 40px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.childDone .dataContainer {
+    width: 100%;
+    background: -webkit-linear-gradient(#eeeeee02, #bdbdbd1a);
+    height: 150px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
